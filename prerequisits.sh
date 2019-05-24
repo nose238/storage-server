@@ -1,3 +1,4 @@
+# It is needed that this dir (storage-server) has 755 permises
 # Installing C and C++ compiler
 yum install gcc gcc-c++ autoconf automake;
 # Downloading Jailkit
