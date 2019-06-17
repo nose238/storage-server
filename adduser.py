@@ -7,21 +7,18 @@
 ################################################################
 import commands
 import os
+import argparse
 
-with open("user", "r+") as user_txt:
-	user_name = user_txt.read()
-	user_txt.seek(0)
-	user_txt.write("")
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--client", help="here you add the client")
+parser.add_argument("-u", "--user", help="here you add the user")
+parser.add_argument("-p", "--password", help="here you add the user's password")
+parser.parse_args()
+args = parser.parse_args()
 
-with open("client", "r+") as client_txt:
-	client_name = client_txt.read()
-	client_txt.seek(0)
-	client_txt.write("")
-
-with open("passwd", "r+") as passwd:
-	user_pass = passwd.read()
-	passwd.seek(0)
-	passwd.write("")
+user_name = args.user
+client_name = args.client
+user_pass = args.password
 
 if os.path.isdir(client_name):
 	print("Client dir already exists.")

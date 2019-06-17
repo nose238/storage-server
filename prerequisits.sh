@@ -1,4 +1,10 @@
 # It is needed that this dir (storage-server) has 755 permises
+# Dir to save removed stuff
+mkdir removed
+# Install at to program tasks
+yum install -y at;
+# Run at Deamon
+atd;
 # Installing C and C++ compiler
 yum install gcc gcc-c++ autoconf automake;
 # Downloading Jailkit
