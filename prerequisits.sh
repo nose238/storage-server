@@ -17,3 +17,7 @@ cd jailkit-2.20;
 ./configure;
 make;
 make install;
+# Configure CentOS to be able to use quotas
+sed -i 's/GRUB_CMDLINE_LINUX="[^"]*/& rootflags=usrquota,grpquota/' /etc/default/grub;
+# Installing quota
+yum -y install quota
